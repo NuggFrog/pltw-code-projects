@@ -25,24 +25,26 @@ fLBool = False
 fMeBool = False
 kBool = False
 
-print("Please only use the first word with the first letter being a capital. For yes or no questions, answer with either Yes or No. ")
+print("Please only use the first word with the full word. For yes or no questions, answer with either Yes or No.")
 
 # Iteration 1
 # Sandwich Type Selector
 sandwich = input("Would you like a Chicken Sandwich, a Beef Sandwich, or a Tofu Sandwich?")
 
+sandwich = sandwich.lower()
+
 # Event Handler for sandwich
-if sandwich == "Chicken":
+if sandwich == "chicken":
   print("You want a Chicken Sandwich for $5.25")
   total = total + chickenPrice
   sBool = True
   sCBool = True
-elif sandwich == "Beef":
+elif sandwich == "beef":
   print("You want a Beef Sandwich for $6.25")
   total = total + beefPrice
   sBool = True
   sBBool = True
-elif sandwich == "Tofu":
+elif sandwich == "tofu":
   print("You want a Tofu Sandwich for $5.75")
   total = total + tofuPrice
   sBool = True
@@ -55,28 +57,32 @@ else:
 # Drink Selector
 bevQ = input("Would you like a drink?")
 
+bevQ = bevQ.lower()
+
 # Drink Selection Handler
-if bevQ == "Yes":
+if bevQ == "yes":
     dBool = True
     bevS = input("Would you like a Small, Medium, or a Large Drink?")
 
+    bevS = bevS.lower()
+
     # Drink Size Selector
-    if bevS == "Small":
+    if bevS == "small":
         print("You want a Small Drink for $1.00")
         total = total + sBevPrice
         dSBool = True
-    elif bevS == "Medium":
+    elif bevS == "medium":
         print("You want a Medium Drink for $1.75")
         total = total + mBevPrice
         dMBool = True
-    elif bevS == "Large":
+    elif bevS == "large":
         print("You want a Large Drink for $2.25")
         total = total + lBevPrice
         dLBool = True
     else:
         print("Please restart the program and input Small, Medium, or Large")
         quit()
-elif bevQ == "No":
+elif bevQ == "no":
     print("You do not want a drink")
 else:
     print("Please restart the program and input Yes or No")
@@ -85,17 +91,25 @@ else:
 # French Fry Selector
 ffQ = input("Would you like French Fries?")
 
+ffQ = ffQ.lower()
+
 # French Fry Selection Handler
-if ffQ == "Yes":
+if ffQ == "yes":
     fBool = True
     ffS = input("Would you like Small, Medium, or Large Fries?")
 
+    ffS = ffS.lower()
+
     # French Fry Size Selector
-    if ffS == ("Small"):
+    if ffS == ("small"):
         fSBool = True
         print("You want Small Fries for $1.00")
         ffSM = input("Would you like to have your fries Mega Sized?")
-        if ffSM == ("Yes"):
+
+        ffSM = ffSM.lower()
+
+
+        if ffSM == ("yes"):
             print("You want Mega Fries for $2.00")
             total = total + lFFPrice
             fMeBool = True
@@ -103,18 +117,18 @@ if ffQ == "Yes":
         else:
             print("You do not want Mega Fries")
             total = total + sFFPrice
-    elif ffS == ("Medium"):
+    elif ffS == ("medium"):
         print("You want Medium Fries for $1.50")
         total = total + mFFPrice
         fMBool = True
-    elif ffS == ("Large"):
+    elif ffS == ("large"):
         print("You want Large Fries for $2.00")
         total = total + lFFPrice
         fLBool = True
     else:
         print("Please restart the program and input Small, Medium, or Large")
         quit()
-elif ffQ == ("No"):
+elif ffQ == ("no"):
     print("You do not want French Fries")
 else:
     print("Please restart the program and input Yes or No")
@@ -124,8 +138,10 @@ else:
 # Ketchup Selector
 kS = input("Would you like Ketchup Packets?")
 
+kS = kS.lower()
+
 # Ketchup Selection Handler
-if kS == ("Yes"):
+if kS == ("yes"):
     kBool = True
     # Ketchup Quantity Handler
     kQ = input("How Many Packets would you like?")
@@ -135,7 +151,7 @@ if kS == ("Yes"):
         total = total + kPrice * kQ
     else:
         print("You do not want Ketchup Packets")
-elif kS == ("No"):
+elif kS == ("no"):
     print("You do not want Ketchup Packets")
 else:
     print("Please restart the program and input Yes or No")

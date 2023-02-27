@@ -25,6 +25,8 @@ fLBool = False
 fMeBool = False
 kBool = False
 
+print("Please only use the first word with the first letter being a capital. For yes or no questions, answer with either Yes or No. ")
+
 # Iteration 1
 # Sandwich Type Selector
 sandwich = input("Would you like a Chicken Sandwich, a Beef Sandwich, or a Tofu Sandwich?")
@@ -74,8 +76,10 @@ if bevQ == "Yes":
     else:
         print("Please restart the program and input Small, Medium, or Large")
         quit()
-else:
+elif bevQ == "No":
     print("You do not want a drink")
+else:
+    print("Please restart the program and input Yes or No")
 
 # Iteration 3
 # French Fry Selector
